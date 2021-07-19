@@ -6,7 +6,7 @@ function required(msg: string) {
         };
 
         const setter = function(newName: string) {
-            if(newName) {
+            if(newName !== "") {
                 name = newName;
             } else {
                 console.log(msg);

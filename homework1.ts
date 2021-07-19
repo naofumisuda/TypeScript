@@ -1,18 +1,23 @@
-function strCount<T>(inputData: T[]) {
-    var strCount : number = 0;
+type inputDataType = number | string;
+
+function strCount<T extends inputDataType>(inputData: T[]) {
+    let strCount : number = 0;
     inputData.forEach(element => {
         if(typeof(element) == "string") {
             strCount++;
         }
     });
-    console.log(strCount);
+    return strCount;
 }
 
-var inputData: (number|string)[] = [1, "h",2, "k", "hello"];
-strCount<number | string>(inputData);
+let inputData1 = [1, "h",2, "k", "hello"];
+let strCount1 : inputDataType = strCount(inputData1);
+console.log(strCount1);
 
-var inputData: (number|string)[] = [1, 5, 4, 2];
-strCount<number | string>(inputData);
+let inputData2 = [1, 5, 4, 2];
+let strCount2 : inputDataType = strCount(inputData2);
+console.log(strCount2);
 
-var inputData: (number|string)[] =  ["2", "hello", "b", "c"];
-strCount<number | string>(inputData);
+let inputData3 =  ["2", "hello", "b", "c"];
+let strCount3 : inputDataType = strCount(inputData3);
+console.log(strCount3);

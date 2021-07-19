@@ -28,9 +28,13 @@ class Rectangle {
 
 }
 
-const square = new Square(100);
-const rectangle = new Rectangle(11, 11);
+const square1 = new Square(100);
+const square2 = new Square(200);
+const rectangle1 = new Rectangle(11, 11);
+const rectangle2 = new Rectangle(12, 12);
 
-const areas: number[] = [square.calc(), rectangle.calc()];
+const shapes = [square1, square2, rectangle1, rectangle2];
 
-console.log(areas);
+shapes.forEach(element => {
+    console.log(element.calc());
+});
