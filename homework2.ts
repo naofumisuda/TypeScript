@@ -1,4 +1,9 @@
-class Square {
+interface shapes {
+    width: number;
+    calc(): number;
+}
+
+class Square implements shapes{
     width: number;
 
     constructor(width: number) {
@@ -12,7 +17,7 @@ class Square {
 
 }
 
-class Rectangle {
+class Rectangle implements shapes{
     height: number;
     width: number;
 
