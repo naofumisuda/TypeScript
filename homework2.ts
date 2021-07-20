@@ -1,9 +1,9 @@
-interface shapes {
+interface Shape {
     width: number;
     calc(): number;
 }
 
-class Square implements shapes{
+class Square implements Shape {
     width: number;
 
     constructor(width: number) {
@@ -17,7 +17,7 @@ class Square implements shapes{
 
 }
 
-class Rectangle implements shapes{
+class Rectangle implements Shape {
     height: number;
     width: number;
 
@@ -38,7 +38,7 @@ const square2 = new Square(200);
 const rectangle1 = new Rectangle(11, 11);
 const rectangle2 = new Rectangle(12, 12);
 
-const shapes = [square1, square2, rectangle1, rectangle2];
+const shapes : Shape[] = [square1, square2, rectangle1, rectangle2];
 
 shapes.forEach(element => {
     console.log(element.calc());
